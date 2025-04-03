@@ -47,15 +47,15 @@ document.querySelector("#skip").addEventListener("click", function() {
 })
 const muteButton = document.getElementById('mute')
 document.querySelector("#mute").addEventListener("click", function() {
-	if(video.volume != 0){
-	video.volume = 0
-	muteButton.innerHTML = 'Unmute'
-	volume.innerHTML = 0 + '%'
-	}
+	if(video.muted === false){
+		video.muted = true
+		muteButton.innerHTML = 'Unmute'
+		// volume.innerHTML = 0 + '%'
+		}
 	else{
-		video.volume = volslider.value *.01
+		video.muted = false
 		muteButton.innerHTML = 'Mute'
-		volume.innerHTML = volslider.value + '%'
+		// volume.innerHTML = volslider.value + '%'
 
 	}
 })
