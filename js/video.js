@@ -13,7 +13,7 @@ const volslider = document.getElementById('slider')
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
-	volume.innerHTML = volslider.value
+	volume.innerHTML = volslider.value + '%'
 	console.log('yes')
 });
 
@@ -50,19 +50,19 @@ document.querySelector("#mute").addEventListener("click", function() {
 	if(video.volume != 0){
 	video.volume = 0
 	muteButton.innerHTML = 'Unmute'
-	volume.innerHTML = 0
+	volume.innerHTML = 0 + '%'
 	}
 	else{
 		video.volume = volslider.value *.01
 		muteButton.innerHTML = 'Mute'
-		volume.innerHTML = volslider.value
+		volume.innerHTML = volslider.value + '%'
 
 	}
 })
 
 volslider.addEventListener("input", function(){
 	video.volume = volslider.value * .01
-	volume.innerHTML = volslider.value
+	volume.innerHTML = volslider.value +'%'
 })
 
 document.querySelector("#vintage").addEventListener("click", function() {
